@@ -11,14 +11,14 @@ let dog = {};
 // write handler functions
 async function handlePageLoad() {
     // *** Get the id from search params and assign to "id" variable
-
-
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
     if (!id) window.location = '/';
 
     // *** Use the id to get this dog (async, so you need to "await"!)
     // and assign to "dog" variable
 
-
+    dog = await getDog(id);
     if (!dog) window.location = '/';
 
     display();
