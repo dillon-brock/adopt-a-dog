@@ -7,7 +7,10 @@ export async function getDogs() {
     // but you only need id, name, and breed columns
     const response = await client
         .from('dogs')
-        .select();
+        .select(`
+            id,
+            name,
+            breed`);
     // and return the response
     return response.data;
 }
