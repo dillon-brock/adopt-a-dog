@@ -11,7 +11,7 @@ let dogs = [];
 async function handlePageLoad() {
     // *** Get all the dogs (async, so you need to "await")
     // and assign to "dogs" variable
-
+    dogs = await getDogs();
     display();
 }
 
@@ -28,6 +28,3 @@ handlePageLoad();
 
 // no need to display until loaded!
 // display();
-
-
-
